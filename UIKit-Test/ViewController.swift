@@ -63,7 +63,10 @@ class ViewController: UIViewController {
             }
             
             /// This returns an NSConcreteValue, a subclass of NSValue
-            let inputColorMatrix = colorMatrix!.value(forKey: "inputColorMatrix") as! NSObject
+            let inputColorMatrix = colorMatrix!.value(forKey: "inputColorMatrix") as! NSValue
+            var matrix: CAColorMatrix?
+            inputColorMatrix.getValue(&matrix)
+            print(matrix)
         }
     }
 }
